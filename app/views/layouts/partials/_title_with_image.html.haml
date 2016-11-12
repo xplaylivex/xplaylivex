@@ -1,0 +1,14 @@
+%section{:id => id }
+  .container
+    .row
+      .col-md-12.sol-sm-12
+        .text-center
+          %h1{"data-scroll-reveal" => "wait 0.25s, then enter left and move 40px over 1s"}= title
+          %p.lead{"data-scroll-reveal" => "wait 0.25s, then enter top and move 40px over 1s"}= text
+      .gap
+      .col-md-12.col-sm-12
+        -if (defined?(image) && image)
+          =image_tag image, "data-scroll-reveal": "wait 0.25s, then enter down and move 40px over 1s"
+        - elsif (defined?(iframe) && iframe)
+          .embed-responsive.embed-responsive-16by9
+            %iframe.embed-responsive-item.center-block{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => iframe, :width => "560"}

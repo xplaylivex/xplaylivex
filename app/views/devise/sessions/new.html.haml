@@ -1,0 +1,22 @@
+%h2= I18n.t('devise.sessions.text.title')
+%hr
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal auth' }) do |f|
+  .form-group
+    = f.label :email, I18n.t('devise.sessions.text.email'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.email_field :email, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label :password, I18n.t('devise.sessions.text.password'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.password_field :password, autocomplete: "off", class: 'form-control'
+  - if devise_mapping.rememberable?
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        .checkbox
+          = f.label :remember_me do
+            = f.check_box :remember_me
+            = I18n.t('devise.sessions.text.remember')
+  .actions.text-center
+    = f.submit I18n.t('devise.sessions.text.button'), class: "btn btn-primary"
+.text-center
+  = render "devise/shared/links"

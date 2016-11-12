@@ -1,0 +1,30 @@
+%section#footer.footer
+  .container
+    #newsletter.row
+      .col-sm-6.col-sm-offset-3.col-md-6.col-md-offset-3.col-lg-6.col-lg-offset-3
+        %h2{"data-scroll-reveal" => "wait 0.45s, then enter left and move 80px over 1s"}= title
+        %p{"data-scroll-reveal" => "wait 0.45s, then enter right and move 80px over 1s"}= description
+        #newsletter_form
+          %form#subscribe-form.subscribe-form{:action => "#", :method => "post"}
+            %input.subscribe-input{:name => "email", :placeholder => placeholder, :required => "", :type => "email"}/
+            %button.subscribe-submit.orange{:type => "submit"}= button_label
+        #preview
+    .row
+      #share.col-sm-10.col-sm-offset-1.col-md-10.col-md-offset-1.col-lg-10.col-lg-offset-1
+        #social_icons
+          %ul
+            %li
+              =link_to("http://facebook.com/xplaylivex", "data-scroll-reveal": "wait 0.45s, then enter left and move 80px over 1s") do
+                %i.fa.fa-facebook
+            %li
+              =link_to("http://twitter.com/xplaylivex", "data-scroll-reveal": "wait 0.45s, then enter left and move 80px over 1s") do
+                %i.fa.fa-twitter
+            %li
+              =link_to("http://youtube.com/xplaylivex", "data-scroll-reveal": "wait 0.45s, then enter left and move 80px over 1s") do
+                %i.fa.fa-youtube
+            %li
+              =link_to("http://twitch.tv/xplaylivex", "data-scroll-reveal": "wait 0.45s, then enter left and move 80px over 1s") do
+                %i.fa.fa-twitch
+        %p
+          Copyright © 2016 xPlayLivex. Designed by
+          %a{:href => "http://www.scriptcafe.in"} Script Cafe

@@ -1,0 +1,37 @@
+nav {
+  .nav {
+    &>li {
+      &>a {
+        font-weight: 400;
+
+        &:hover, &:focus {
+          background-color: #000;
+        }
+
+        &.active {
+          color: #feaf1e;
+        }
+      }
+    }
+    &.header-button > li {
+      float: left;
+
+      & > a {
+        padding-bottom: 0;
+        padding-top: 0;
+
+        & > button {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.btn-primary {
+  color: #333;
+}
+
+.blank_background {
+  background: white;
+}

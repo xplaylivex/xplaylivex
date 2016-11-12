@@ -1,0 +1,24 @@
+%h2= I18n.t('devise.registrations.text.title')
+%hr
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal auth' }) do |f|
+  = devise_error_messages!
+  .form-group
+    = f.label :email, I18n.t('devise.registrations.text.email'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.email_field :email, autofocus: true
+  .form-group
+    = f.label :password, class: 'col-sm-4 control-label' do
+      =I18n.t('devise.registrations.text.password')
+      - if @minimum_password_length
+        %br
+          =I18n.t('devise.registrations.text.password_length', length: @minimum_password_length)
+    .col-sm-8
+      = f.password_field :password, autocomplete: "off"
+  .form-group
+    = f.label :password_confirmation, I18n.t('devise.registrations.text.password_confirmation'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.password_field :password_confirmation, autocomplete: "off"
+  .actions.text-center
+    = f.submit I18n.t('devise.registrations.text.button'), class: "btn btn-primary"
+.text-center
+  = render "devise/shared/links"

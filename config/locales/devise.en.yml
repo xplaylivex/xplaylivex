@@ -1,0 +1,77 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+      confirmed: "Ton adresse e-mail a bien été confirmée."
+      send_instructions: "Tu recevras un e-mail dans quelques instants pour confirmer ton instruction."
+      send_paranoid_instructions: "Si ton adresse e-mail existe dans notre base de donnée, tu vas recevoir un e-mail de confirmation dans quelques instants."
+    failure:
+      already_authenticated: "Tu es déjà authentifié."
+      inactive: "Ton compte n'est pas activé."
+      invalid: "%{authentication_keys} invalide ou mauvais mot de passe."
+      locked: "Ton compte est verrouillé."
+      last_attempt: "C'est ton dernier essai avant verrouillage de ton compte."
+      not_found_in_database: "%{authentication_keys} invalide ou mauvais mot de passe."
+      timeout: "Ta session a expiré. Reconnecte toi."
+      unauthenticated: "Tu as besoin de t'inscrire ou te connecter avant de continuer."
+      unconfirmed: "Tu dois confirmer ton adresse e-mail avant de continuer."
+    e-mailer:
+      confirmation_instructions:
+        subject: "Instructions de confirmation."
+      reset_password_instructions:
+        subject: "Instructions de remise à zero du mot de passe."
+      unlock_instructions:
+        subject: "Instructions de déverrouillage"
+      password_change:
+        subject: "Mot de passe changé"
+    omniauth_callbacks:
+      failure: "Impossible de vous authentifier depuis %{kind} pour cause de : \"%{reason}\"."
+      success: "Authentification réussi depuis votre compte %{kind}."
+    passwords:
+      no_token: "Vous ne pouvez pas accéder à cette page sans avoir changé votre mot de passe. Si vous venez de l'e-mail de réinitialisation, faites attention à avoir utilisé le lien fourni en entier."
+      send_instructions: "You will receive an e-mail with instructions on how to reset your password in a few minutes."
+      send_paranoid_instructions: "Si tu existes dans la base de données, tu vas recevoir dans quelques instants un lien de réinitialisation de mot de passe à l'adresse e-mail fournie."
+      updated: "Ton mot de passe a été modifié avec succès. Tu es maintenant authentifié."
+      updated_not_active: "Ton mot de passe a été modifié avec succès."
+      text:
+        button: "Mot de passe oublié ?"
+    registrations:
+      destroyed: "Ton compte a bien été annulé, nous espérons te revoir bientot :)"
+      signed_up: "Bienvenue, tu es bien authentifié !"
+      signed_up_but_inactive: "Ton compte n'est pas activé, nous ne pouvons donc pas t'authentifier."
+      signed_up_but_locked: "Ton compte est verrouillé, nous ne pouvons donc pas t'authentifier."
+      signed_up_but_unconfirmed: "Un message avec un lien de confirmation a été envoyé par e-mail. Utilise ce lien pour activer ton compte."
+      update_needs_confirmation: "Ton compte a été mis à jour mais il faut vérifier ta nouvelle adresse e-mail. Utilise le lien de confirmation envoyé par e-mail."
+      updated: "Ton compte a été mis à jour."
+      text:
+        title: "Inscription"
+        email: "Adresse e-mail"
+        password: "Mot de passe"
+        password_confirmation: "Mot de passe de confirmation"
+        password_length: "(%{length} caractères minimums)"
+        button: "S'enregistrer"
+    sessions:
+      signed_in: "Authentification réussie."
+      signed_out: "Déconnexion réussie."
+      already_signed_out: "Déconnexion réussie."
+      text:
+        title: "Authentification"
+        email: "Adresse e-mail"
+        password: "Mot de passe"
+        remember: "Se souvenir de moi"
+        button: "Se connecter"
+    unlocks:
+      send_instructions: "Tu vas recevoir par e-mail les instructions pour déverrouiller ton compte dans quelques instants."
+      send_paranoid_instructions: "Si ton compte existe, tu vas recevoir par e-mail les instructions pour déverrouiller ton compte dans quelques instants."
+      unlocked: "Ton compte a été déverrouillé avec succès. Tu peux maintenant t'authentifier."
+  errors:
+    messages:
+      already_confirmed: "était déjà confirmé, essaie de t'authentifie."
+      confirmation_period_expired: " a besoin de confirmation et la période de confirmation a expiré. Réessaye."
+      expired: "a expiré, réessaye."
+      not_found: "non trouvé"
+      not_locked: "n'était pas verrouillé."
+      not_saved:
+        one: "1 erreur est apparu sur le champ %{resource} empêchant la sauvegarde :"
+        other: "%{count} sont apparus sur le champ %{resource} empêchant la sauvegarde :"

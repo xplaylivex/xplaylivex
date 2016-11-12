@@ -1,0 +1,18 @@
+en:
+  navbar:
+    index: Accueil
+    proposition: Proposition
+    games: Jeux
+    links: Liens
+    about: A propos
+    subscribe: S'abonner
+    signup: S'inscrire
+    signin: Se connecter
+    signout: Se déconnecter
+  header-title: xPlayLivex
+  header-description: Bienvenue sur le site des chaines Youtube et Twitch de xPlayLivex.<br />Vous trouverez ici toutes les informations concernant l'activité des chaines.
+  footer:
+    name: Abonne toi
+    description: S'abonner te permettra d'être averti des nouveautés de la chaine.
+    placeholder: mon@adresse.email
+    button_label: GO !
