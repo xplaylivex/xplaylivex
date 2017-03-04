@@ -46,6 +46,7 @@ en:
       updated: "Ton compte a été mis à jour."
       text:
         title: "Inscription"
+        username: "Pseudo"
         email: "Adresse e-mail"
         password: "Mot de passe"
         password_confirmation: "Mot de passe de confirmation"

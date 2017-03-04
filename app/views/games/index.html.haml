@@ -1,3 +1,50 @@
-%p index
-%div
-	=paginate @games
+%h1= I18n.t('title.games-current')
+- if !@current_games.length
+	%h3
+		%small= I18n.t('subtitle.no-games-current')
+- else
+	.row
+		- @current_games.each do |game|
+			.col-sm-6.col-md-4
+				.thumbnail.text-center
+					=image_tag(game.image)
+					.caption
+						%h3= game.name
+						%p= game.comment
+						%p
+							- if game.link
+								= link_to(I18n.t('link-to-youtube'), game.link, class: 'btn btn-primary', target: '_blank')
+							- else
+								= link_to(I18n.t('no-link-to-youtube'), '#', class: 'btn btn-default', disabled: true)
+%h1= I18n.t('title.games-done')
+- if @finished_games.length == 0
+	%h3
+		%small= I18n.t('subtitle.no-games-done')
+- else
+	.row
+	- @finished_games.each do |game|
+		.col-sm-6.col-md-4
+			.thumbnail.text-center
+				=image_tag(game.image)
+				.caption
+					%h3= game.name
+					%p= game.comment
+					%p
+						%a.btn.btn-primary{ role: "button"} Button
+						%a.btn.btn-default{ role: "button"} Button
+%h1= I18n.t('title.games-abort')
+- if @aborted_games.length == 0
+	%h3
+		%small= I18n.t('subtitle.no-games-abort')
+- else
+	.row
+	- @aborted_games.each do |game|
+		.col-sm-6.col-md-4
+			.thumbnail.text-center
+				=image_tag(game.image)
+				.caption
+					%h3= game.name
+					%p= game.comment
+					%p
+						%a.btn.btn-primary{ role: "button"} Button
+						%a.btn.btn-default{ role: "button"} Button

@@ -1,0 +1,7 @@
+en:
+  errors:
+    videos:
+      show_collapse:
+        title: 'Erreur !'
+        content: "Une erreur s'est produite, réessayez ultérieurement."
+      empty_category: 'Aucune vidéo dans cette catégorie pour le moment.'

@@ -1,12 +1,10 @@
 %body
   %header#home.header{:role => "banner"}
-    .container
+    .nav-container
       .navbar-header
         %button.navbar-toggle{"data-target" => ".bs-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
           %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
+          %i.fa.fa-bars{ 'aria-hidden': "true"}
         =link_to root_path, class: "navbar-brand" do
           =image_tag logo
       %nav.collapse.navbar-collapse.bs-navbar-collapse.navbar-right{:role => "navigation"}
@@ -18,5 +16,34 @@
         %ul.nav.navbar-right.header-button
           - btn_header.each do |menu|
             %li
-              =link_to menu[:link], class: menu[:active] ? 'active' : '' do
+              =link_to menu[:link], class: menu[:active] ? 'active' : '', method: (menu[:method] ? menu[:method] : nil) do
                 %button.btn.btn-primary{ type: "button" }= menu[:text]
+    - flash.each do |name, msg|
+      - if name == 'notice'
+        .bg-notice.flash_messages.clearfix
+          - if msg.is_a? String
+            %button.pull-left.close{ type: "button", 'aria-label': "Close" }
+              %span{ 'aria-hidden': "true"}
+                &times;
+            %p=msg
+          - else
+            %button.pull-left.close{ type: "button", 'aria-label': "Close" }
+              %span{ 'aria-hidden': "true"}
+                &times;
+            - msg.each do |key, message_array|
+              - message_array.each do |message|
+                %p=message
+      - elsif name == 'alert'
+        .bg-alert.flash_messages.clearfix
+          - if msg.is_a? String
+            %button.pull-left.close{ type: "button", 'aria-label': "Close" }
+              %span{ 'aria-hidden': "true"}
+                &times;
+            %p=msg
+          - else
+            %button.pull-left.close{ type: "button", 'aria-label': "Close" }
+              %span{ 'aria-hidden': "true"}
+                &times;
+            - msg.each do |key, message_array|
+              - message_array.each do |message|
+                %p=message

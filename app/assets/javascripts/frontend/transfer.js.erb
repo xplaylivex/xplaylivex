@@ -1,0 +1,17 @@
+<% environment.context_class.instance_eval { include Rails.application.routes.url_helpers } %>
+
+FRONTEND = {
+  ROUTES: {
+    SHOW_VIDEO_CATEGORY: <%= ActiveSupport::JSON.encode(video_categories_url('video_category_id_parameter')) %>
+  },
+  LANG: {
+    ERRORS: {
+      VIDEOS: {
+        COLLAPSE_TITLE: {
+          title: <%= ActiveSupport::JSON.encode(I18n.t('errors.videos.show_collapse.title')) %>,
+          content: <%= ActiveSupport::JSON.encode(I18n.t('errors.videos.show_collapse.content')) %>,
+        }
+      }
+    }
+  }
+}

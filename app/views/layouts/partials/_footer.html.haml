@@ -5,9 +5,9 @@
         %h2{"data-scroll-reveal" => "wait 0.45s, then enter left and move 80px over 1s"}= title
         %p{"data-scroll-reveal" => "wait 0.45s, then enter right and move 80px over 1s"}= description
         #newsletter_form
-          %form#subscribe-form.subscribe-form{:action => "#", :method => "post"}
-            %input.subscribe-input{:name => "email", :placeholder => placeholder, :required => "", :type => "email"}/
-            %button.subscribe-submit.orange{:type => "submit"}= button_label
+          = form_for(@newsletter_subscription, url: newsletter_subscriptions_path(@newsletter_subscription), html: { id: 'subscribe-form', class: 'subscribe-form' }) do |f|
+            = f.email_field :email, class: 'subscribe-input', placeholder: placeholder
+            = f.submit button_label, class: "subscribe-submit orange"
         #preview
     .row
       #share.col-sm-10.col-sm-offset-1.col-md-10.col-md-offset-1.col-lg-10.col-lg-offset-1

@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Image.create([
+  { filename: 're6.png', hash_id: 'azerty', extension: 'png' }
+])
+
+Game.create([
+  { name: 'Resident Evil 6', comment: 'Lul c nul', state: Game::CURRENT, image_id: Image.first.id }
+])

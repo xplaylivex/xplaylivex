@@ -1,0 +1,76 @@
+.row
+  .col-md-4
+    %h3 Wishlist de Lund
+    %hr
+    %br
+    =link_to "http://steamcommunity.com/id/Mystilund/wishlist/", target: '_blank' do
+      =image_tag 'links/steam_lund', class: 'img-responsive'
+    %br
+    %hr
+    %br
+    %h3 Facebook
+    %hr
+    %br
+    .fb-page{"data-adapt-container-width" => "true", "data-hide-cover" => "false", "data-href" => "https://www.facebook.com/xPlayLivex/", "data-show-facepile" => "true", "data-small-header" => "false", "data-tabs" => "timeline"}
+      %blockquote.fb-xfbml-parse-ignore{:cite => "https://www.facebook.com/xPlayLivex/"}
+        %a{:href => "https://www.facebook.com/xPlayLivex/"} Play Live
+  .col-md-4
+    %h3 Wishlist de Ystaroth
+    %hr
+    %br
+    =link_to "http://steamcommunity.com/profiles/76561198015927645/wishlist/", target: '_blank' do
+      =image_tag 'links/steam_ystaroth', class: 'img-responsive'
+    %br
+    %hr
+    %br
+    %h3 Twitter
+    %hr
+    %br
+    %a.twitter-timeline{"data-lang" => "fr", "data-link-color" => "#E95F28", "data-theme" => "dark", "data-height" => "500", "data-width" => "100%", :href => "https://twitter.com/xPlayLivex"} Tweets by xPlayLivex
+    %script{:async => "", :charset => "utf-8", :src => "//platform.twitter.com/widgets.js"}
+  .col-md-4
+    %h3 Youtube
+    %hr
+    %br
+    %script{:src => "https://apis.google.com/js/platform.js"}
+    .g-ytsubscribe{"data-channel" => "xPlayLivex", "data-count" => "default", "data-layout" => "full"}
+    %br
+    %hr
+    %br
+    %h3 Discord
+    %hr
+    %br
+    =link_to "https://discordapp.com/invite/tCYmDm2", target: '_blank' do
+      =image_tag 'links/discord'
+    %br
+    %hr
+    %br
+    %h3 Instant Gaming
+    %hr
+    %br
+    =link_to "https://www.instant-gaming.com/fr/?igr=lund", target: '_blank' do
+      =image_tag 'links/instantgaming'
+    %br
+    %hr
+    %br
+    %h3 Dons
+    %hr
+    %br
+    =link_to "https://twitch.streamlabs.com/xplaylivex", target: '_blank' do
+      =image_tag 'links/don'
+:javascript
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1808977666027443',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/fr_FR/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));

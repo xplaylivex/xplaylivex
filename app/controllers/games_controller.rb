@@ -1,8 +1,7 @@
 class GamesController < ApplicationController
   def index
-  	@games = Game.page(params[:page].to_i)
-  end
-
-  def show
+  	@current_games = Game.where(state: Game::CURRENT).all
+  	@finished_games = Game.where(state: Game::FINISHED).all
+  	@aborted_games = Game.where(state: Game::ABORTED).all
   end
 end

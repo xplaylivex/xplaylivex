@@ -4,7 +4,8 @@ class CreateTableGames < ActiveRecord::Migration
       t.string :name
       t.text :comment
       t.string :link
-      t.integer :image_id, 'integer unsigned'
+      t.integer :state
+      t.integer :image_id
 
       t.timestamps
     end

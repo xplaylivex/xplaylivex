@@ -1,7 +1,9 @@
 en:
+  flash:
+    newsletter_subscription_done: "Tu as été inscrit à la newsletter avec succès."
   navbar:
     index: Accueil
-    proposition: Proposition
+    videos: Vidéos
     games: Jeux
     links: Liens
     about: A propos
@@ -16,3 +18,26 @@ en:
     description: S'abonner te permettra d'être averti des nouveautés de la chaine.
     placeholder: mon@adresse.email
     button_label: GO !
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: "Un pseudonyme est requis."
+              invalid: "Votre pseudonyme peut être uniquement composé de lettres, de nombres ou du symbole _."
+              too_short: "Votre pseudonyme doit avoir une taille comprise entre 4 et 128 caractères."
+              too_long: "Votre pseudonyme doit avoir une taille comprise entre 4 et 128 caractères."
+              taken: "Ce pseudonyme est déjà utilisé."
+            description:
+              too_long: "Votre description ne peut pas dépasser les 2048 caractères."
+            favorite_game:
+              too_long: "La description de vos jeux favoris ne peut pas dépasser les 255 caractères."
+            favorite_type:
+              too_long: "La description de vos types de jeu favoris ne peut pas dépasser les 255 caractères."
+        newsletter_subscription:
+          attributes:
+            email:
+              blank: "Un email est nécessaire pour s'inscrire à la newsletter"
+              invalid: "L'adresse email spécifiée pour souscrire à la newsletter est invalide."
+              taken: "Cette adresse email est déjà utilisé."

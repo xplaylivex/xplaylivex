@@ -1,0 +1,11 @@
+en:
+  title:
+    games-current: "Jeux en cours"
+    games-done: "Jeux finis"
+    games-abort: "Jeux abandonnés"
+  subtitle:
+    no-games-current: "Aucun jeu actuellement en cours"
+    no-games-done: "Aucun jeu terminé"
+    no-games-abort: "Aucun jeu abandonné"
+  link-to-youtube: "Lien vers les vidéos"
+  no-link-to-youtube: "Aucune vidéo disponible"

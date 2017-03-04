@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options host: 'localhost', port: 3000
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -57,5 +58,9 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :games, only: [:index, :show]
+  resources :links, only: [:index]
+  resources :games, only: [:index]
+  resources :videos, only: [:index, :show]
+  get 'videos/category/:category_id' => 'videos#showCategory', as: 'video_categories'
+  resources :newsletter_subscriptions, only: [ :create ]
 end

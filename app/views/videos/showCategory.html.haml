@@ -1,0 +1,13 @@
+.row
+  .text-center
+    %h2= @video_category.name
+  - @video_category.videos.each do |video|
+    .col-sm-4.col-md-3
+      =link_to video_path(video) do
+        .thumbnail.thumb-shadow.text-center
+          =image_tag video.image_link
+          .caption.thumbnail-gray-caption
+            %h3= video.name
+  - if @video_category.videos.size == 0
+    %hr
+    %h3= I18n.t('text.no-content')

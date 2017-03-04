@@ -3,6 +3,10 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal auth' }) do |f|
   = devise_error_messages!
   .form-group
+    = f.label :username, I18n.t('devise.registrations.text.username'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :username, autofocus: true
+  .form-group
     = f.label :email, I18n.t('devise.registrations.text.email'), class: 'col-sm-4 control-label'
     .col-sm-8
       = f.email_field :email, autofocus: true

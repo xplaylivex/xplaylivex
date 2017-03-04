@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 
+//= require ./frontend/transfer.js.erb
 //= require_tree ./frontend/lib
 //= require ./frontend/function.js
+//= require ./frontend/main.js
+//= require ./frontend/videos.js
