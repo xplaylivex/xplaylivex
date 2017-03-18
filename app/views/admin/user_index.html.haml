@@ -1,0 +1,29 @@
+%h1
+  = link_to 'Mon super panel admin ', admin_path
+  \- users
+%table.table
+  %thead
+    %tr
+      %td ID
+      %td Pseudo
+      %td E-mail
+      %td Description
+      %td Date de naissance
+      %td Jeux favoris
+      %td Type de jeu favoris
+      %td Editer
+  %tbody.table-hover
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td= user.username
+        %td= user.email
+        %td= user.description
+        %td= user.birthday
+        %td= user.favorite_game
+        %td= user.favorite_type
+        %td
+          = link_to admin_user_edit_path(user) do
+            %i.fa.fa-pencil
+.text-center
+  = paginate @users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207205038) do
+ActiveRecord::Schema.define(version: 20170211170304) do
 
   create_table "games", force: :cascade do |t|
     t.string   "name"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20161207205038) do
     t.string   "favorite_game",          limit: 255
     t.string   "favorite_type",          limit: 255
     t.integer  "image_id"
+    t.integer  "role",                               default: 2
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -65,7 +66,8 @@ ActiveRecord::Schema.define(version: 20161207205038) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
   create_table "video_categories", force: :cascade do |t|
-    t.string   "name",         default: "", null: false
+    t.string   "name",          default: "", null: false
+    t.integer  "category_type",              null: false
     t.string   "playlist_uri"
     t.datetime "created_at"
     t.datetime "updated_at"

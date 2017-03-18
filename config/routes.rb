@@ -63,4 +63,22 @@ Rails.application.routes.draw do
   resources :videos, only: [:index, :show]
   get 'videos/category/:category_id' => 'videos#showCategory', as: 'video_categories'
   resources :newsletter_subscriptions, only: [ :create ]
+
+  get '/admin' => 'admin#index', as: 'admin'
+
+  get '/admin/users' => 'admin#user_index', as: 'admin_users'
+  get '/admin/users/:id/edit' => 'admin#user_edit', as: 'admin_user_edit'
+  patch '/admin/users/:id/update' => 'admin#user_update', as: 'admin_user_update'
+
+  get '/admin/games' => 'admin#game_index', as: 'admin_games'
+  get '/admin/games/new' => 'admin#game_new', as: 'admin_game_new'
+  put '/admin/games/create' => 'admin#game_create', as: 'admin_game_create'
+  get '/admin/games/:id/edit' => 'admin#game_edit', as: 'admin_game_edit'
+  patch '/admin/games/:id/update' => 'admin#game_update', as: 'admin_game_update'
+
+  get '/admin/videos' => 'admin#video_index', as: 'admin_videos'
+  get '/admin/videos/new' => 'admin#video_new', as: 'admin_video_new'
+  put '/admin/videos/create' => 'admin#video_create', as: 'admin_video_create'
+  get '/admin/videos/:id/edit' => 'admin#video_edit', as: 'admin_video_edit'
+  patch '/admin/videos/:id/update' => 'admin#video_update', as: 'admin_video_update'
 end

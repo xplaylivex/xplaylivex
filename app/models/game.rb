@@ -2,9 +2,9 @@ class Game < ActiveRecord::Base
 	paginates_per 50
 	belongs_to :image
 
-	CURRENT = 1
-	FINISHED = 2
-	ABORTED = 3
+	CURRENT 	= 1
+	FINISHED 	= 2
+	ABORTED 	= 3
 
 	def image
 		image = super

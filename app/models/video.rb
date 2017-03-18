@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+	paginates_per 50
+	
 	belongs_to :video_category
 	belongs_to :image
 

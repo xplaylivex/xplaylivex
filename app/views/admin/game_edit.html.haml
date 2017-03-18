@@ -1,0 +1,27 @@
+%h1
+  = link_to 'Mon super panel admin', admin_path
+  = link_to ' - games ', admin_games_path
+  \- edit
+= form_for @game, url: admin_game_update_path(@game), html: { class: 'form-horizontal auth' } do |f|
+  - if @game.errors.size != 0
+    %ul.alert.alert-danger
+      - @game.errors.each do |error_key, error_value|
+        %li= error_key.to_s + ' ' + error_value.to_s
+  .form-group
+    = f.label :name, 'Nom', class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :name, autofocus: true
+  .form-group
+    = f.label :comment, 'Commentaire', class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_area :comment, autofocus: true
+  .form-group
+    = f.label :link, 'Lien', class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :link, autofocus: true
+  .form-group
+    = f.label :state, 'Etat', class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.select :state, options_for_select([ ['En cours', Game::CURRENT], ['Fini', Game::FINISHED], ['Stoppé', Game::ABORTED] ], @game.state)
+  .actions.text-center
+    = f.submit I18n.t('devise.registrations.text.button'), class: "btn btn-primary"

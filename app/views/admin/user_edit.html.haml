@@ -1,0 +1,35 @@
+%h1
+  = link_to 'Mon super panel admin', admin_path
+  = link_to ' - users ', admin_users_path
+  \- edit
+= form_for @user, url: admin_user_update_path(@user), html: { class: 'form-horizontal auth' } do |f|
+  - if @user.errors.size != 0
+    %ul.alert.alert-danger
+      - @user.errors.each do |error_key, error_value|
+        %li= error_key.to_s + ' ' + error_value.to_s
+  .form-group
+    = f.label :username, I18n.t('devise.registrations.text.username'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :username, autofocus: true
+  .form-group
+    = f.label :email, I18n.t('devise.registrations.text.email'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.email_field :email, autofocus: true
+  .form-group
+    = f.label :description, I18n.t('devise.registrations.text.description'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_area :description, autofocus: true
+  .form-group
+    = f.label :favorite_game, I18n.t('devise.registrations.text.favorite_game'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :favorite_game, autofocus: true
+  .form-group
+    = f.label :favorite_type, I18n.t('devise.registrations.text.favorite_type'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :favorite_type, autofocus: true
+  .form-group
+    = f.label :role, I18n.t('devise.registrations.text.role'), class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.select :role, options_for_select([ ['Administrateur', User::ADMIN_TYPE], ['Utilisateur classique', User::CLASSIC_TYPE] ], @user.role)
+  .actions.text-center
+    = f.submit I18n.t('devise.registrations.text.button'), class: "btn btn-primary"

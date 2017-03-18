@@ -1,0 +1,27 @@
+%h1
+  = link_to 'Mon super panel admin ', admin_path
+  \- videos
+%table.table
+  %thead
+    %tr
+      %td ID
+      %td Nom
+      %td Lien
+      %td Catégorie
+      %td Editer
+  %tbody.table-hover
+    - @videos.each do |video|
+      %tr
+        %td= video.id
+        %td= video.name
+        %td= video.link
+        %td
+          - if video.video_category
+            = video.video_category.name
+          - else
+            Aucune catégorie
+        %td
+          = link_to admin_video_edit_path(video) do
+            %i.fa.fa-pencil
+.text-center
+  = paginate @videos

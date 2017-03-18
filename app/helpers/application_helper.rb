@@ -1,5 +1,24 @@
 module ApplicationHelper
   def header_parameters
+    btn_header = []
+
+    if user_signed_in?
+      btn_header = [
+        { link: destroy_user_session_url, text: I18n.t('navbar.signout'), method: :delete },
+        { link: '#footer', text: I18n.t('navbar.subscribe') }
+      ]
+
+      if current_user.role == User::ADMIN_TYPE
+        btn_header << { link: '#', text: I18n.t('navbar.admin') }
+      end
+    else
+      btn_header = [
+        { link: new_user_session_url, text: I18n.t('navbar.signin') },
+        { link: new_user_registration_url, text: I18n.t('navbar.signup') },
+        { link: '#footer', text: I18n.t('navbar.subscribe') }
+      ]
+    end
+
     {
       route_index: root_url,
       logo: '',
@@ -10,15 +29,7 @@ module ApplicationHelper
         { link: links_url, text: I18n.t('navbar.links'), active: false },
         { link: '#impFeature', text: I18n.t('navbar.about'), active: false }
       ],
-      btn_header:
-        user_signed_in? ? [
-          { link: destroy_user_session_url, text: I18n.t('navbar.signout'), method: :delete },
-          { link: '#footer', text: I18n.t('navbar.subscribe') }
-        ] : [
-          { link: new_user_session_url, text: I18n.t('navbar.signin') },
-          { link: new_user_registration_url, text: I18n.t('navbar.signup') },
-          { link: '#footer', text: I18n.t('navbar.subscribe') }
-        ]
+      btn_header: btn_header
     }
   end
 

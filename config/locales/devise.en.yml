@@ -52,6 +52,10 @@ en:
         password_confirmation: "Mot de passe de confirmation"
         password_length: "(%{length} caractères minimums)"
         button: "S'enregistrer"
+        description: "Description"
+        favorite_game: "Jeux favoris"
+        favorite_type: "Type de jeux favoris"
+        role: "Role"
     sessions:
       signed_in: "Authentification réussie."
       signed_out: "Déconnexion réussie."

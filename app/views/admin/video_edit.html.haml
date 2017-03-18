@@ -1,0 +1,23 @@
+%h1
+  = link_to 'Mon super panel admin', admin_path
+  = link_to ' - videos ', admin_videos_path
+  \- edit
+= form_for @video, url: admin_video_update_path(@video), html: { class: 'form-horizontal auth' } do |f|
+  - if @video.errors.size != 0
+    %ul.alert.alert-danger
+      - @video.errors.each do |error_key, error_value|
+        %li= error_key.to_s + ' ' + error_value.to_s
+  .form-group
+    = f.label :name, 'Nom', class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :name, autofocus: true
+  .form-group
+    = f.label :link, 'Lien', class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :link, autofocus: true
+  .form-group
+    = f.label :video_category_id, 'Categorie', class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.select :video_category_id, options_for_select(@video_categories, @video.video_category_id)
+  .actions.text-center
+    = f.submit I18n.t('devise.registrations.text.button'), class: "btn btn-primary"
